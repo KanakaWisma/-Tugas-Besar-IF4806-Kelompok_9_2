@@ -3,6 +3,7 @@
 
 #include <string>
 #include "kunjungan.h"
+
 using namespace std;
 
 struct infotypeD {
@@ -26,9 +27,9 @@ struct ListDokter {
 
 void createListDokter(ListDokter &L);
 addressD alokasiD(infotypeD x);
-void insertLastD(ListDokter &L, addressD D);
+void insertAfterD(ListDokter &L, addressD prec, addressD D);
 addressD findDokter(ListDokter L, string id);
-void deleteDokter(ListDokter &L, addressD &D);
+void deleteAfterD(ListDokter &L, addressD prec, addressD &D);
 void printAllDokter(ListDokter L);
 
 void connectDokterKunjungan(addressD D, addressK K);
