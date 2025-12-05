@@ -1,35 +1,39 @@
-#ifndef POLI_H
-#define POLI_H
+#ifndef DOKTER_H
+#define DOKTER_H
 
 #include <string>
-#include "dokter.h"
+#include "kunjungan.h"
+
 using namespace std;
 
-struct infotypeP {
-    string namaPoli;
-    string kodePoli;
+struct infotypeD {
+    string namaDokter;
+    string idDokter;
+    string spesialisasi;
 };
 
-typedef struct elmListP *addressP;
-struct elmListP {
-    infotypeP info;
-    addressP next;
-    addressD firstChild;
+typedef struct elmListD *addressD;
+struct elmListD {
+    infotypeD info;
+    addressD next;
+    addressD prev;
+    addressK firstChild;
 };
 
-struct ListPoli {
-    addressP first;
+struct ListDokter {
+    addressD first;
+    addressD last;
 };
 
-void createListPoli(ListPoli &L);
-addressP alokasiP(infotypeP x);
-void insertLastP(ListPoli &L, addressP P);
-addressP findPoli(ListPoli L, string kode);
-void deletePoli(ListPoli &L, addressP &P);
-void printAllPoli(ListPoli L);
+void createListDokter(ListDokter &L);
+addressD alokasiD(infotypeD x);
+void insertAfterD(ListDokter &L, addressD prec, addressD D);
+addressD findDokter(ListDokter L, string id);
+void deleteAfterD(ListDokter &L, addressD prec, addressD &D);
+void printAllDokter(ListDokter L);
 
-void connectPoliDokter(addressP P, addressD D);
-void disconnectPoliDokter(addressP P, addressD D);
-void printDokterInPoli(addressP P);
+void connectDokterKunjungan(addressD D, addressK K);
+void disconnectDokterKunjungan(addressD D, addressK K);
+void printKunjunganDokter(addressD D);
 
 #endif
