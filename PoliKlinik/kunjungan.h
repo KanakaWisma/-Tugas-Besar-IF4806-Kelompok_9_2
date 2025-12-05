@@ -2,6 +2,7 @@
 #define KUNJUNGAN_H
 
 #include <string>
+
 using namespace std;
 
 struct infotypeK {
@@ -26,7 +27,7 @@ void createListKunjungan(ListKunjungan &L);
 addressK alokasiK(infotypeK x);
 void insertLastK(ListKunjungan &L, addressK K);
 addressK findKunjungan(ListKunjungan L, string id);
-void deleteKunjungan(ListKunjungan &L, addressK &K);
+void deleteLastK(ListKunjungan &L, addressK &K);
 void printAllKunjungan(ListKunjungan L);
 
 #endif
