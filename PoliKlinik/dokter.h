@@ -36,5 +36,8 @@ void tambahPasienKeDokter(ListDokter &L, string idDokter, infotypeP dataPasien);
 void hapusPasienDariDokter(ListDokter &L, string idDokter, string idPasien);
 int hitungJumlahPasien(addressD D);
 void cariRiwayatPasien(ListDokter L, string idPasien);
+void dokterTerpopuler(ListDokter L);
+void printSemuaPasienUnik(ListDokter L);
 
 #endif
+
