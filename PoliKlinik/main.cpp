@@ -20,11 +20,11 @@ void menuAdmin() {
 
         cin >> pilihan;
 
-        if (pilihan == "1") pil = 1;
-        else if (pilihan == "2") pil = 2;
-        else if (pilihan == "3") pil = 3;
-        else if (pilihan == "4") pil = 4;
-        else if (pilihan == "0") pil = 0;
+        if (pilihan == "1") pilih = 1;
+        else if (pilihan == "2") pilih = 2;
+        else if (pilihan == "3") pilih = 3;
+        else if (pilihan == "4") pilih = 4;
+        else if (pilihan == "0") pilih = 0;
         else pilih = -1;
 
         if (pilih == 1) {
@@ -168,3 +168,4 @@ int main() {
 
     return 0;
 }
+
