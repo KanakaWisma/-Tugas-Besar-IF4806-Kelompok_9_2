@@ -120,7 +120,7 @@ void menuStudiKasus() {
             }
         } else if (pilih == 3) {
             string idPas;
-            cout << "Masukkan Nama Pasien yang dicari: "; cin >> idPas;
+            cout << "Masukkan ID Pasien yang dicari: "; cin >> idPas;
             cariRiwayatPasien(LD, idPas);
         } else if (pilih == 4) { // Fitur baru
             printSemuaPasienUnik(LD);
@@ -168,4 +168,5 @@ int main() {
 
     return 0;
 }
+
 
