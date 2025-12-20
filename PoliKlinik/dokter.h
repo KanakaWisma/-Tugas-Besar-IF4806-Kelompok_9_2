@@ -16,7 +16,6 @@ typedef struct elmDokter *addressD;
 struct elmDokter {
     infotypeD info;
     addressD next;
-    addressD prev;
     addressP firstChild;
 };
 
@@ -40,4 +39,5 @@ void dokterTerpopuler(ListDokter L);
 void printSemuaPasienUnik(ListDokter L);
 
 #endif
+
 
