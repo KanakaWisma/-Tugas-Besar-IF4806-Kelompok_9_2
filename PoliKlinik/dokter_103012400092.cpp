@@ -37,32 +37,33 @@ addressD findDokter(ListDokter L, string id) {
 }
 
 void deleteDokter(ListDokter &L, addressD &D) {
-    if (D == L.first) {
-        L.first = L.first->next;
-        if (L.first != nullptr) {
-            L.first->prev = nullptr;
-        } else {
-            L.last = nullptr;
-        }
-    } else if (D == L.last) {
-        L.last = L.last->prev;
-        if (L.last != nullptr) {
-            L.last->next = nullptr;
-        }
-    } else {
-        D->prev->next = D->next;
-        D->next->prev = D->prev;
-    }
-
     addressP child = D->firstChild;
     while (child != nullptr) {
         addressP temp = child;
         child = child->next;
         delete temp;
     }
+    D->firstChild = nullptr;
 
+    if (D == L.first) {
+        L.first = L.first->next;
+        if (L.first == nullptr) {
+            L.last = nullptr;
+        }
+    } else {
+        addressD prec = L.first;
+        while (prec != nullptr && prec->next != D) {
+            prec = prec->next;
+        }
+
+        if (prec != nullptr) {
+            prec->next = D->next;
+            if (D == L.last) {
+                L.last = prec;
+            }
+        }
+    }
     D->next = nullptr;
-    D->prev = nullptr;
 }
 
 void printDokterDanPasien(ListDokter L) {
@@ -83,4 +84,5 @@ void printDokterDanPasien(ListDokter L) {
         P = P->next;
     }
 }
+
 
