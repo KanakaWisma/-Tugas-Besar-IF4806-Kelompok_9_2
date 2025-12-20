@@ -11,7 +11,6 @@ addressD alokasiDokter(infotypeD data) {
     addressD P = new elmDokter;
     P->info = data;
     P->next = nullptr;
-    P->prev = nullptr;
     P->firstChild = nullptr;
     return P;
 }
@@ -22,7 +21,6 @@ void insertDokter(ListDokter &L, addressD D) {
         L.last = D;
     } else {
         L.last->next = D;
-        D->prev = L.last;
         L.last = D;
     }
 }
@@ -85,3 +83,4 @@ void printDokterDanPasien(ListDokter L) {
         P = P->next;
     }
 }
+
